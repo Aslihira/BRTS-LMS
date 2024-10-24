@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRTS Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Map styles */
+        #map {
+            height: 400px; /* Adjust height as needed */
+            width: 100%;
+            margin-top: 1rem;
+            background-image: url('https://via.placeholder.com/600x400?text=Google+Map+Placeholder');
+            background-size: cover;
+            position: relative;
+        }
+        .map-link {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>BRTS Dashboard</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-bus"></i> Real-Time Tracking</a></li>
+            <li><a href="#"><i class="fas fa-ticket-alt"></i> Ticket Booking</a></li>
+            <li><a href="#"><i class="fas fa-bell"></i> Alerts</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <div class="main-content">
+        <header>
+            <div class="welcome-msg">
+                <h1>Welcome to BRTS Management System</h1>
+                <p>Manage bookings, track buses, and receive alerts in one place.</p>
+            </div>
+            <div class="user-info">
+                <span><i class="fas fa-user"></i> Admin</span>
+            </div>
+        </header>
+
+        <!-- Dashboard Overview Cards -->
+        <section class="overview-cards">
+            <div class="card">
+                <i class="fas fa-bus"></i>
+                <h3>Bus Tracking</h3>
+                <p>Real-time updates on bus locations and schedules.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-ticket-alt"></i>
+                <h3>Bookings</h3>
+                <p>Manage ticket bookings and view details.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bell"></i>
+                <h3>Notifications</h3>
+                <p>Get live alerts for delays, route changes, and emergencies.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Statistics</h3>
+                <p>View usage statistics and analyze system performance.</p>
+            </div>
+        </section>
+
+        <!-- Real-Time Bus Info Section -->
+        <section class="real-time-info">
+            <h2>Live Bus Information</h2>
+            <div class="bus-info-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bus Number</th>
+                            <th>Route</th>
+                            <th>Arrival Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>14</td>
+                            <td>Downtown - Airport</td>
+                            <td>1:43 PM</td>
+                            <td class="on-time">On Time</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>Central Park - University</td>
+                            <td>2:05 PM</td>
+                            <td class="delayed">Delayed</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Google Maps Section -->
+        <section class="map-section">
+            <h2>Bus Locations</h2>
+            <div id="map">
+                <a href="https://www.google.com/maps" target="_blank" class="map-link">View on Google Maps</a>
+            </div>
+        </section>
+
+        <!-- Ticket Booking Section -->
+        <section class="booking-section">
+            <h2>Book a Ticket</h2>
+            <div class="booking-form">
+                <label for="route">Select Route:</label>
+                <select id="route">
+                    <option value="1">Downtown - Airport</option>
+                    <option value="2">Central Park - University</option>
+                    <!-- Add more routes -->
+                </select>
+
+                <label for="time">Select Time:</label>
+                <input type="time" id="time" name="time">
+
+                <button class="book-btn">Book Now</button>
+            </div>
+        </section>
+
+        <!-- Alerts and Notifications Section -->
+        <section class="alerts-section">
+            <h2>Alerts & Notifications</h2>
+            <div class="alert-message">
+                <p><strong>Attention:</strong> Bus 22 is delayed by 15 minutes due to traffic congestion.</p>
+                <p><strong>Notice:</strong> Route changes effective from next week. Please check your schedules.</p>
+                <!-- More alerts can be dynamically added here -->
+            </div>
+        </section>
+        
+        <!-- User Feedback Section -->
+        <section class="feedback-section">
+            <h2>User Feedback</h2>
+            <div class="feedback-form">
+                <label for="feedback">Share your feedback:</label>
+                <textarea id="feedback" rows="4" placeholder="Write your feedback here..."></textarea>
+                <button class="submit-feedback">Submit Feedback</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
